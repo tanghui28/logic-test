@@ -2,7 +2,7 @@ import React from 'react';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 
 /**
- *   🚀手写 数字输入框 组件
+ *   🚀手写 数字输入框 组件 , 不能使用第三方组件
  *   左侧为输入框 , 只能输入数字  , 右侧为 上下箭头 ,  点击上/下箭头 实现值 +1 或 -1
  *   样式参考 antd InputNumber : https://ant-design.gitee.io/components/input-number-cn/
  *   该组件共四个属性, 如下:
