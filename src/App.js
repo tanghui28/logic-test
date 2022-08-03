@@ -1,10 +1,10 @@
-import React from 'react';
-import InputNumber from './InputNumber';
-import pathTestData from './pathTestData';
-import virtualTestData from './virtualTestData';
-import isEqual from 'lodash.isequal';
-import cloneDeep from 'lodash.clonedeep';
-import xor from 'lodash.xor';
+import React from "react";
+import InputNumber from "./InputNumber";
+import pathTestData from "./pathTestData";
+import virtualTestData from "./virtualTestData";
+import isEqual from "lodash.isequal";
+import cloneDeep from "lodash.clonedeep";
+import xor from "lodash.xor";
 
 export default function App() {
   return (
@@ -29,14 +29,16 @@ export default function App() {
  *  2、完善下方 getPath 方法
  *  该方法接受一个对象参数 , 返回该对象中的所有属性的路径数组
  *  如: {
- *        title:"componentB",
  *        label:'饼图',
  *        legend:{
  *          zlevel:2,
- *          borderColor:'red'
+ *          borderColor:'red',
+ *          padding:{
+ *            top:10
+ *          }
  *        }
  *      }
- *   => ['title','label','legend','legend.zlevel','legend.borderColor']
+ *   => ['label','legend','legend.zlevel','legend.borderColor','legend.padding','legend.padding.top']
  * */
 
 /**
@@ -48,18 +50,18 @@ function getPath(obj) {
   return [];
 }
 console.log(
-  '🚀getPath 测试结果1: ',
+  "🚀getPath 测试结果1: ",
   getPath(cloneDeep(pathTestData.test1.rawData)),
-  'isEqual width processedData:',
+  "是否符合预期:",
   xor(
     getPath(cloneDeep(pathTestData.test1.rawData)),
     pathTestData.test1.processedData
   ).length === 0
 );
 console.log(
-  '🚀getPath 测试结果2',
+  "🚀getPath 测试结果2",
   getPath(cloneDeep(pathTestData.test2.rawData)),
-  'isEqual width processedData:',
+  "是否符合预期:",
   xor(
     getPath(cloneDeep(pathTestData.test2.rawData)),
     pathTestData.test2.processedData
@@ -103,18 +105,18 @@ function deleteVirtualWrapper(data) {
   return data;
 }
 console.log(
-  '🚀  deleteVirtualWrapper 测试结果1:',
+  "🚀  deleteVirtualWrapper 测试结果1:",
   deleteVirtualWrapper(cloneDeep(virtualTestData.test1.rawData)),
-  'isEqual width processedData:',
+  "是否符合预期:",
   isEqual(
     deleteVirtualWrapper(cloneDeep(virtualTestData.test1.rawData)),
     virtualTestData.test1.processedData
   )
 );
 console.log(
-  '🚀  deleteVirtualWrapper 测试结果2:',
+  "🚀  deleteVirtualWrapper 测试结果2:",
   deleteVirtualWrapper(cloneDeep(virtualTestData.test2.rawData)),
-  'isEqual width processedData:',
+  "是否符合预期:",
   isEqual(
     deleteVirtualWrapper(cloneDeep(virtualTestData.test2.rawData)),
     virtualTestData.test2.processedData
