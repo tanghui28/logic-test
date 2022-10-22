@@ -12,9 +12,9 @@ export default function App() {
       <div style={{ marginBottom: 40 }}>
         <code style={{ fontSize: 20 }}>
           笔试题,共三题 <br />
-          1、 完成 InputNumber 组件编写 <br />
-          2、 实现 getPath 方法 <br />
-          3、 实现 deleteVirtualWrapper 方法
+          1、 完成 InputNumber 组件编写 (50分) <br />
+          2、 实现 getPath 方法 (25分) <br />
+          3、 实现 deleteVirtualWrapper (25分) 方法
           <br />
         </code>
       </div>
