@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import InputNumber from "./InputNumber";
 import pathTestData from "./pathTestData";
 import virtualTestData from "./virtualTestData";
@@ -7,24 +7,22 @@ import cloneDeep from "lodash.clonedeep";
 import xor from "lodash.xor";
 
 export default function App() {
+  const [v, setV] = useState(6);
   return (
     <div>
-      <div style={{ marginBottom: 40 }}>
-        <code style={{ fontSize: 20 }}>
-          笔试题,共三题 <br />
-          1、 完成 InputNumber 组件编写 (50分) <br />
-          2、 实现 getPath 方法 (25分) <br />
-          3、 实现 deleteVirtualWrapper (25分) 方法
-          <br />
-        </code>
-      </div>
+      <code style={{ fontSize: 20 }}>
+        笔试题,共三题 , 60分以上可进入面试环节 <br />
+        1、 完成 InputNumber 组件编写 , (50分) <br />
+        2、 实现 getPath 方法 , (25分) <br />
+        3、 实现 deleteVirtualWrapper 方法 , (25分)
+        <br />
+      </code>
 
       {/* 1、进入 InputNumber.js文件 , 实现该 InputNumber 组件逻辑 */}
-      <InputNumber />
+      <InputNumber value={v} />
     </div>
   );
 }
-
 /**
  *  2、完善下方 getPath 方法
  *  该方法接受一个对象参数 , 返回该对象中的所有属性的路径数组
