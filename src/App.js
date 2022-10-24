@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div>
       <code style={{ fontSize: 20 }}>
-        笔试题,共三题 , 60分以上可进入面试环节 <br />
+        笔试题 , 共三题(90分钟内完成) ,  60分以上可进入面试环节 <br />
         1、 完成 InputNumber 组件编写 , (50分) <br />
         2、 实现 getPath 方法 , (25分) <br />
         3、 实现 deleteVirtualWrapper 方法 , (25分)
