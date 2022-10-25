@@ -7,8 +7,7 @@ import cloneDeep from "lodash.clonedeep";
 import xor from "lodash.xor";
 
 export default function App() {
-  const [v, setV] = useState(6);
-  const [v2, setV2] = useState(8);
+  const [v, setV] = useState(8);
   return (
     <div>
       <code style={{ fontSize: 20 }}>
@@ -24,12 +23,12 @@ export default function App() {
       {/* 1、进入 InputNumber.js文件 , 实现该 InputNumber 组件逻辑 */}
       <div style={{ padding: 40, display: "flex", gap: 16 }}>
         <span>受控模式 ：</span>
-        <InputNumber value={v} />
-        <InputNumber value={v2} onChange={setV2} />
+        <InputNumber value={6} />
+        <InputNumber value={v} onChange={setV} />
       </div>
       <div style={{ padding: 40 }}>
         <span>非受控控模式 ：</span>
-        <InputNumber />
+        <InputNumber min={-2} max={5} />
       </div>
     </div>
   );
