@@ -27,7 +27,7 @@ export default function App() {
         <InputNumber value={v} onChange={setV} />
       </div>
       <div style={{ padding: 40 }}>
-        <span>非受控控模式 ：</span>
+        <span>非受控模式 ：</span>
         <InputNumber min={-2} max={5} />
       </div>
     </div>
