@@ -8,18 +8,29 @@ import xor from "lodash.xor";
 
 export default function App() {
   const [v, setV] = useState(6);
+  const [v2, setV2] = useState(8);
   return (
     <div>
       <code style={{ fontSize: 20 }}>
-        笔试题 , 共三题(90分钟内完成) ,  60分以上可进入面试环节 <br />
-        1、 完成 InputNumber 组件编写 , (50分) <br />
-        2、 实现 getPath 方法 , (25分) <br />
-        3、 实现 deleteVirtualWrapper 方法 , (25分)
+        笔试题 , 共三题(一个半小时内完成) <br />
+        总分100分 , InputNumber50分 / getPath25分 /deleteVirtualWrapper25分,
+        60分以上可进入面试环节 <br />
+        1、 完成 InputNumber 组件编写 <br />
+        2、 实现 getPath 方法 <br />
+        3、 实现 deleteVirtualWrapper 方法
         <br />
       </code>
 
       {/* 1、进入 InputNumber.js文件 , 实现该 InputNumber 组件逻辑 */}
-      <InputNumber value={v} />
+      <div style={{ padding: 40, display: "flex", gap: 16 }}>
+        <span>受控模式 ：</span>
+        <InputNumber value={v} />
+        <InputNumber value={v2} onChange={setV2} />
+      </div>
+      <div style={{ padding: 40 }}>
+        <span>非受控控模式 ：</span>
+        <InputNumber />
+      </div>
     </div>
   );
 }
